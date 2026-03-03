@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>London Laser Clinic — Project Hub</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Noto+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --llc-primary: #333333;
+      --llc-accent: #888888;
+      --llc-accent-hover: #666666;
+      --llc-bg: #F5F5F5;
+      --llc-surface: #E0E0E0;
+      --llc-text: #333333;
+      --llc-font-heading: 'Cormorant Garamond', serif;
+      --llc-font-body: 'Noto Sans', sans-serif;
+    }
+
+    body {
+      font-family: var(--llc-font-body);
+      font-weight: 400;
+      color: var(--llc-text);
+      background: var(--llc-bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Header */
+    .hub-header {
+      text-align: center;
+      padding: 56px 24px 0;
+    }
+
+    .hub-welcome {
+      font-family: var(--llc-font-body);
+      font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      color: var(--llc-primary);
+      margin-bottom: 24px;
+    }
+
+    .hub-client-info {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      padding: 20px 0;
+      border-top: 1px solid var(--llc-accent);
+      border-bottom: 1px solid var(--llc-accent);
+    }
+
+    .hub-client-info__item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .hub-client-info__label {
+      font-size: 0.6875rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--llc-accent-hover);
+    }
+
+    .hub-client-info__value {
+      font-family: var(--llc-font-heading);
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--llc-primary);
+    }
+
+    /* Main */
+    .hub-main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 24px 64px;
+      flex: 1;
+    }
+
+    /* Link Cards */
+    .hub-links {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .hub-link {
+      display: flex;
+      flex-direction: column;
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 28px 24px;
+      text-decoration: none;
+      color: var(--llc-text);
+      box-shadow: 0 2px 12px rgba(51,51,51,0.06);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .hub-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(51,51,51,0.1);
+    }
+
+    .hub-link:focus-visible {
+      outline: 2px solid var(--llc-accent-hover);
+      outline-offset: 2px;
+    }
+
+    .hub-link__number {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--llc-accent-hover);
+      margin-bottom: 8px;
+    }
+
+    .hub-link__title {
+      font-family: var(--llc-font-heading);
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: var(--llc-primary);
+      margin-bottom: 6px;
+    }
+
+    .hub-link__desc {
+      font-size: 0.8125rem;
+      color: #8a8a8a;
+      line-height: 1.5;
+      flex: 1;
+    }
+
+    .hub-link__arrow {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--llc-accent-hover);
+      margin-top: 16px;
+      transition: letter-spacing 0.2s ease;
+    }
+
+    .hub-link:hover .hub-link__arrow {
+      letter-spacing: 0.14em;
+    }
+
+    /* Footer */
+    .hub-footer {
+      text-align: center;
+      padding: 24px;
+      border-top: 1px solid var(--llc-accent);
+    }
+
+    .hub-footer__text {
+      font-size: 0.75rem;
+      color: #8a8a8a;
+    }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      .hub-links {
+        grid-template-columns: 1fr;
+      }
+      .hub-client-info {
+        flex-direction: column;
+        gap: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hub-header">
+    <h1 class="hub-welcome">Welcome to the Foxhue Project Hub</h1>
+    <div class="hub-client-info">
+      <div class="hub-client-info__item">
+        <span class="hub-client-info__label">Client</span>
+        <span class="hub-client-info__value">London Laser Clinic</span>
+      </div>
+      <div class="hub-client-info__item">
+        <span class="hub-client-info__label">Industry</span>
+        <span class="hub-client-info__value">Laser Clinic</span>
+      </div>
+      <div class="hub-client-info__item">
+        <span class="hub-client-info__label">Location</span>
+        <span class="hub-client-info__value">London (7 locations)</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="hub-main">
+
+    <nav class="hub-links" aria-label="Project deliverables">
+
+      <a href="docs/creative-process.html" class="hub-link">
+        <span class="hub-link__number">01</span>
+        <h2 class="hub-link__title">Creative Process</h2>
+        <p class="hub-link__desc">How we got here &mdash; the research, inspiration, and thinking behind your design directions.</p>
+        <span class="hub-link__arrow" aria-hidden="true">View Process &rarr;</span>
+      </a>
+
+      <a href="designs/" class="hub-link">
+        <span class="hub-link__number">02</span>
+        <h2 class="hub-link__title">Design Directions</h2>
+        <p class="hub-link__desc">Three distinct visual approaches for London Laser.</p>
+        <span class="hub-link__arrow" aria-hidden="true">View Designs &rarr;</span>
+      </a>
+
+      <a href="website/variants/" class="hub-link">
+        <span class="hub-link__number">03</span>
+        <h2 class="hub-link__title">Layout Review</h2>
+        <p class="hub-link__desc">Compare all three layouts across every page, pick your preferences, and leave notes.</p>
+        <span class="hub-link__arrow" aria-hidden="true">Review Layouts &rarr;</span>
+      </a>
+
+      <a href="docs/seo-competitor-report.html" class="hub-link">
+        <span class="hub-link__number">04</span>
+        <h2 class="hub-link__title">SEO Report</h2>
+        <p class="hub-link__desc">In-depth competitor analysis, keyword opportunities, and SEO recommendations.</p>
+        <span class="hub-link__arrow" aria-hidden="true">View Report &rarr;</span>
+      </a>
+
+    </nav>
+  </main>
+
+  <footer class="hub-footer">
+    <p class="hub-footer__text">Prepared by Foxhue Studio</p>
+  </footer>
+
+</body>
+</html>

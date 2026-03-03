@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layout Review — London Laser Clinic</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Noto+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --llc-primary: #333333;
+      --llc-accent: #888888;
+      --llc-accent-hover: #666666;
+      --llc-bg: #F5F5F5;
+      --llc-surface: #E0E0E0;
+      --llc-font-heading: 'Cormorant Garamond', serif;
+      --llc-font-body: 'Noto Sans', sans-serif;
+    }
+
+    body {
+      font-family: var(--llc-font-body);
+      font-weight: 400;
+      color: var(--llc-primary);
+      background: var(--llc-bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Back link */
+    .hub-back {
+      display: inline-block;
+      padding: 16px 24px;
+      font-size: 0.8125rem;
+      color: var(--llc-accent);
+      text-decoration: none;
+      transition: color 0.25s ease;
+    }
+
+    .hub-back:hover {
+      color: var(--llc-accent-hover);
+    }
+
+    /* Header */
+    .hub-header {
+      text-align: center;
+      padding: 48px 24px 24px;
+      border-bottom: 1px solid rgba(51,51,51,0.1);
+    }
+
+    .hub-logo__main {
+      font-family: var(--llc-font-heading);
+      font-size: 1.75rem;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      color: var(--llc-primary);
+    }
+
+    /* Main */
+    .hub-main {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 48px 24px 40px;
+    }
+
+    .hub-intro {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .hub-eyebrow {
+      display: block;
+      font-family: var(--llc-font-heading);
+      font-size: 0.6875rem;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--llc-accent);
+      margin-bottom: 12px;
+    }
+
+    .hub-title {
+      font-family: var(--llc-font-heading);
+      font-size: clamp(1.5rem, 3.5vw, 2.375rem);
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      color: var(--llc-primary);
+      margin-bottom: 12px;
+    }
+
+    .hub-subtitle {
+      font-size: 0.9375rem;
+      color: var(--llc-accent);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* Review Cards */
+    .review-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-bottom: 56px;
+    }
+
+    .review-card {
+      background: #ffffff;
+      border-radius: 8px;
+      padding: 28px 28px 24px;
+      box-shadow: 0 2px 12px rgba(51,51,51,0.06);
+    }
+
+    .review-card__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .review-card__number {
+      font-family: var(--llc-font-heading);
+      font-size: 0.6875rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--llc-accent);
+    }
+
+    .review-card__title {
+      font-family: var(--llc-font-heading);
+      font-size: 1.25rem;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      color: var(--llc-primary);
+    }
+
+    .review-card__actions {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+
+    .review-card__previews {
+      display: flex;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    /* Preview Pills */
+    .preview-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 18px;
+      font-family: var(--llc-font-heading);
+      font-size: 0.6875rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 100px;
+      transition: all 0.25s ease;
+    }
+
+    .preview-pill--a {
+      background: var(--llc-primary);
+      color: #ffffff;
+    }
+    .preview-pill--a:hover { background: #222222; }
+
+    .preview-pill--b {
+      background: var(--llc-accent);
+      color: #ffffff;
+    }
+    .preview-pill--b:hover { background: var(--llc-accent-hover); }
+
+    .preview-pill--c {
+      background: var(--llc-surface);
+      color: var(--llc-primary);
+    }
+    .preview-pill--c:hover {
+      background: var(--llc-accent);
+      color: #ffffff;
+    }
+
+    /* Radio Group */
+    .review-card__preference {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .preference-label {
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--llc-accent);
+      margin-right: 8px;
+    }
+
+    .radio-option {
+      position: relative;
+      cursor: pointer;
+    }
+
+    .radio-option input[type="radio"] {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .radio-option__label {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px 14px;
+      font-family: var(--llc-font-body);
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      border: 1px solid var(--llc-accent);
+      border-radius: 100px;
+      color: var(--llc-primary);
+      background: transparent;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      user-select: none;
+    }
+
+    .radio-option__label:hover {
+      background: var(--llc-surface);
+    }
+
+    .radio-option input[type="radio"]:checked + .radio-option__label {
+      background: var(--llc-primary);
+      border-color: var(--llc-primary);
+      color: #ffffff;
+    }
+
+    .radio-option input[type="radio"]:focus-visible + .radio-option__label {
+      outline: 2px solid var(--llc-accent);
+      outline-offset: 2px;
+    }
+
+    /* Notes Textarea */
+    .review-card__notes {
+      margin-top: 12px;
+    }
+
+    .notes-textarea {
+      width: 100%;
+      padding: 10px 14px;
+      font-family: var(--llc-font-body);
+      font-size: 0.8125rem;
+      font-weight: 400;
+      color: var(--llc-primary);
+      background: var(--llc-bg);
+      border: 1px solid rgba(51,51,51,0.12);
+      border-radius: 6px;
+      resize: vertical;
+      min-height: 36px;
+      line-height: 1.5;
+      transition: border-color 0.2s ease;
+    }
+
+    .notes-textarea::placeholder { color: #b0b0b0; }
+    .notes-textarea:focus { outline: none; border-color: var(--llc-accent); }
+
+    /* Floating Summary */
+    .summary-panel {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--llc-primary);
+      color: #ffffff;
+      padding: 14px 24px;
+      font-size: 0.75rem;
+      z-index: 100;
+      transform: translateY(100%);
+      transition: transform 0.35s ease;
+      box-shadow: 0 -4px 20px rgba(51,51,51,0.15);
+    }
+
+    .summary-panel--visible { transform: translateY(0); }
+
+    .summary-panel__inner {
+      max-width: 880px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .summary-panel__picks {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 14px;
+      font-family: var(--llc-font-body);
+      line-height: 1.5;
+    }
+
+    .summary-pick { white-space: nowrap; }
+    .summary-pick__page { color: var(--llc-accent); }
+    .summary-pick__choice { font-weight: 500; }
+
+    .summary-panel__count {
+      font-family: var(--llc-font-heading);
+      font-size: 0.6875rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--llc-accent);
+      white-space: nowrap;
+    }
+
+    /* Submission Section */
+    .submission-section {
+      background: #ffffff;
+      border-radius: 8px;
+      padding: 36px 28px;
+      box-shadow: 0 2px 12px rgba(51,51,51,0.06);
+      margin-bottom: 40px;
+    }
+
+    .submission-section__eyebrow {
+      display: block;
+      font-family: var(--llc-font-heading);
+      font-size: 0.6875rem;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--llc-accent);
+      margin-bottom: 8px;
+    }
+
+    .submission-section__title {
+      font-family: var(--llc-font-heading);
+      font-size: 1.5rem;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      color: var(--llc-primary);
+      margin-bottom: 8px;
+    }
+
+    .submission-section__desc {
+      font-size: 0.875rem;
+      color: var(--llc-accent);
+      margin-bottom: 28px;
+      max-width: 520px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-field label {
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--llc-accent);
+    }
+
+    .form-field input {
+      padding: 10px 14px;
+      font-family: var(--llc-font-body);
+      font-size: 0.875rem;
+      font-weight: 400;
+      color: var(--llc-primary);
+      background: var(--llc-bg);
+      border: 1px solid rgba(51,51,51,0.12);
+      border-radius: 6px;
+      transition: border-color 0.2s ease;
+    }
+
+    .form-field input:focus { outline: none; border-color: var(--llc-accent); }
+    .form-field input::placeholder { color: #b0b0b0; }
+
+    .form-buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn-submit {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 32px;
+      font-family: var(--llc-font-heading);
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #ffffff;
+      background: var(--llc-primary);
+      border: 1px solid var(--llc-primary);
+      border-radius: 100px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .btn-submit:hover { background: #222222; }
+    .btn-submit:disabled { opacity: 0.4; cursor: not-allowed; }
+
+    .btn-copy {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 32px;
+      font-family: var(--llc-font-heading);
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--llc-primary);
+      background: transparent;
+      border: 1px solid var(--llc-accent);
+      border-radius: 100px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .btn-copy:hover { background: var(--llc-surface); }
+
+    .form-message {
+      margin-top: 12px;
+      font-size: 0.8125rem;
+      color: var(--llc-accent);
+      min-height: 20px;
+    }
+
+    .form-message--error { color: #c0392b; }
+    .form-message--success { color: #27ae60; }
+
+    /* Footer */
+    .hub-footer {
+      text-align: center;
+      padding: 24px;
+      padding-bottom: 72px;
+      border-top: 1px solid rgba(51,51,51,0.1);
+    }
+
+    .hub-footer__text {
+      font-size: 0.75rem;
+      color: var(--llc-accent);
+    }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      .review-card { padding: 20px; }
+      .review-card__actions { flex-direction: column; align-items: flex-start; gap: 14px; }
+      .review-card__preference { gap: 4px; }
+      .form-row { grid-template-columns: 1fr; }
+      .summary-panel__picks { gap: 4px 10px; font-size: 0.6875rem; }
+      .summary-panel__inner { flex-direction: column; align-items: flex-start; gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="../../index.html" class="hub-back">&larr; Project Hub</a>
+
+  <header class="hub-header">
+    <span class="hub-logo__main">London Laser Clinic</span>
+  </header>
+
+  <main class="hub-main">
+    <div class="hub-intro">
+      <span class="hub-eyebrow">Client Review</span>
+      <h1 class="hub-title">Layout Preferences</h1>
+      <p class="hub-subtitle">Each page has three layout options. Preview each one, select your preferred layout, and add any notes. Submit your choices when ready — your selections are saved automatically as you go.</p>
+    </div>
+
+    <form id="reviewForm" action="https://formsubmit.co/andrew@foxhue.com" method="POST" class="review-form">
+      <input type="hidden" name="_cc" value="ashley@foxhue.com">
+      <input type="hidden" name="_subject" value="London Laser Clinic — Layout Preferences">
+      <input type="hidden" name="_next" value="https://foxhue.github.io/london-laser-clinic/website/variants/index.html">
+      <input type="hidden" name="_ajax" value="true">
+      <input type="hidden" name="_captcha" value="false">
+
+      <div class="review-cards">
+
+        <!-- 1. Homepage -->
+        <div class="review-card" data-page="homepage">
+          <div class="review-card__header">
+            <div>
+              <span class="review-card__number">01 / 03</span>
+              <h2 class="review-card__title">Homepage</h2>
+            </div>
+          </div>
+          <div class="review-card__actions">
+            <div class="review-card__previews">
+              <a href="../index.html" target="_blank" rel="noopener" class="preview-pill preview-pill--a" aria-label="Preview Homepage Layout A">Layout A</a>
+              <a href="index-b.html" target="_blank" rel="noopener" class="preview-pill preview-pill--b" aria-label="Preview Homepage Layout B">Layout B</a>
+              <a href="index-c.html" target="_blank" rel="noopener" class="preview-pill preview-pill--c" aria-label="Preview Homepage Layout C">Layout C</a>
+            </div>
+            <div class="review-card__preference" role="radiogroup" aria-label="Homepage layout preference">
+              <span class="preference-label">Preferred:</span>
+              <label class="radio-option">
+                <input type="radio" name="pref_homepage" value="A">
+                <span class="radio-option__label">A</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="pref_homepage" value="B">
+                <span class="radio-option__label">B</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="pref_homepage" value="C">
+                <span class="radio-option__label">C</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="pref_homepage" value="Undecided">
+                <span class="radio-option__label">Undecided</span>
+              </label>
+            </div>
+          </div>
+          <div class="review-card__notes">
+            <textarea class="notes-textarea" name="notes_homepage" rows="1" placeholder="Any notes on this page..." aria-label="Notes for Homepage"></textarea>
+          </div>
+        </div>
+
+        <!-- 2. About -->
+        <div class="review-card" data-page="about">
+          <div class="review-card__header">
+            <div>
+              <span class="review-card__number">02 / 03</span>
+              <h2 class="review-card__title">About</h2>
+            </div>
+          </div>
+          <div class="review-card__actions">
+            <div class="review-card__previews">
+              <a href="../about.html" target="_blank" rel="noopener" class="preview-pill preview-pill--a" aria-label="Preview About Layout A">Layout A</a>
+              <a href="about-b.html" target="_blank" rel="noopener" class="preview-pill preview-pill--b" aria-label="Preview About Layout B">Layout B</a>
+              <a href="about-c.html" target="_blank" rel="noopener" class="preview-pill preview-pill--c" aria-label="Preview About Layout C">Layout C</a>
+            </div>
+            <div class="review-card__preference" role="radiogroup" aria-label="About layout preference">
+              <span class="preference-label">Preferred:</span>
+              <label class="radio-option">
+                <input type="radio" name="pref_about" value="A">
+                <span class="radio-option__label">A</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="pref_about" value="B">
+                <span class="radio-option__label">B</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="pref_about" value="C">
+                <span class="radio-option__label">C</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="pref_about" value="Undecided">
+                <span class="radio-option__label">Undecided</span>
+              </label>
+            </div>
+          </div>
+          <div class="review-card__notes">
+            <textarea class="notes-textarea" name="notes_about" rows="1" placeholder="Any notes on this page..." aria-label="Notes for About"></textarea>
+          </div>
+        </div>
+
+        <!-- 3. Contact -->
+        <div class="review-card" data-page="contact">
+          <div class="review-card__header">
+            <div>
+              <span class="review-card__number">03 / 03</span>
+              <h2 class="review-card__title">Contact</h2>
+            </div>
+          </div>
+          <div class="review-card__actions">
+            <div class="review-card__previews">
+              <a href="../contact.html" target="_blank" rel="noopener" class="preview-pill preview-pill--a" aria-label="Preview Contact Layout A">Layout A</a>
+              <a href="contact-b.html" target="_blank" rel="noopener" class="preview-pill preview-pill--b" aria-label="Preview Contact Layout B">Layout B</a>
+              <a href="contact-c.html" target="_blank" rel="noopener" class="preview-pill preview-pill--c" aria-label="Preview Contact Layout C">Layout C</a>
+            </div>
+            <div class="review-card__preference" role="radiogroup" aria-label="Contact layout preference">
+              <span class="preference-label">Preferred:</span>
+              <label class="radio-option">
+                <input type="radio" name="pref_contact" value="A">
+                <span class="radio-option__label">A</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="pref_contact" value="B">
+                <span class="radio-option__label">B</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="pref_contact" value="C">
+                <span class="radio-option__label">C</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="pref_contact" value="Undecided">
+                <span class="radio-option__label">Undecided</span>
+              </label>
+            </div>
+          </div>
+          <div class="review-card__notes">
+            <textarea class="notes-textarea" name="notes_contact" rows="1" placeholder="Any notes on this page..." aria-label="Notes for Contact"></textarea>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Submission Section -->
+      <div class="submission-section">
+        <span class="submission-section__eyebrow">Submit Feedback</span>
+        <h2 class="submission-section__title">Your Details</h2>
+        <p class="submission-section__desc">Enter your name and optionally your email. We will use your selections to finalise the website layouts.</p>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="clientName">Name <span aria-hidden="true">*</span></label>
+            <input type="text" id="clientName" name="client_name" required placeholder="Your name" autocomplete="name">
+          </div>
+          <div class="form-field">
+            <label for="clientEmail">Email (optional)</label>
+            <input type="email" id="clientEmail" name="client_email" placeholder="your@email.com" autocomplete="email">
+          </div>
+        </div>
+
+        <div id="compiledFields"></div>
+
+        <div class="form-buttons">
+          <button type="submit" class="btn-submit" id="btnSubmit">Submit Preferences</button>
+          <button type="button" class="btn-copy" id="btnCopy">Copy to Clipboard</button>
+        </div>
+
+        <p class="form-message" id="formMessage" aria-live="polite"></p>
+      </div>
+
+    </form>
+  </main>
+
+  <!-- Floating Summary -->
+  <div class="summary-panel" id="summaryPanel" aria-label="Selection summary">
+    <div class="summary-panel__inner">
+      <div class="summary-panel__picks" id="summaryPicks"></div>
+      <span class="summary-panel__count" id="summaryCount">0 / 3 selected</span>
+    </div>
+  </div>
+
+  <footer class="hub-footer">
+    <p class="hub-footer__text">&copy; 2026 London Laser Clinic &mdash; Layout review for client feedback</p>
+  </footer>
+
+  <script>
+    (function () {
+      var STORAGE_KEY = 'llcReviewData';
+      var PAGES = [
+        { key: 'homepage', label: 'Homepage' },
+        { key: 'about', label: 'About' },
+        { key: 'contact', label: 'Contact' }
+      ];
+
+      function saveData() {
+        var data = {};
+        PAGES.forEach(function (p) {
+          var checked = document.querySelector('input[name="pref_' + p.key + '"]:checked');
+          var notes = document.querySelector('textarea[name="notes_' + p.key + '"]');
+          data[p.key] = {
+            pref: checked ? checked.value : '',
+            notes: notes ? notes.value : ''
+          };
+        });
+        data.clientName = document.getElementById('clientName').value;
+        data.clientEmail = document.getElementById('clientEmail').value;
+        try { localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); } catch (e) {}
+      }
+
+      function restoreData() {
+        var raw;
+        try { raw = localStorage.getItem(STORAGE_KEY); } catch (e) {}
+        if (!raw) return;
+        var data;
+        try { data = JSON.parse(raw); } catch (e) { return; }
+        PAGES.forEach(function (p) {
+          if (data[p.key]) {
+            if (data[p.key].pref) {
+              var radio = document.querySelector('input[name="pref_' + p.key + '"][value="' + data[p.key].pref + '"]');
+              if (radio) radio.checked = true;
+            }
+            if (data[p.key].notes) {
+              var textarea = document.querySelector('textarea[name="notes_' + p.key + '"]');
+              if (textarea) textarea.value = data[p.key].notes;
+            }
+          }
+        });
+        if (data.clientName) document.getElementById('clientName').value = data.clientName;
+        if (data.clientEmail) document.getElementById('clientEmail').value = data.clientEmail;
+      }
+
+      function updateSummary() {
+        var picks = [];
+        var count = 0;
+        PAGES.forEach(function (p) {
+          var checked = document.querySelector('input[name="pref_' + p.key + '"]:checked');
+          if (checked) {
+            count++;
+            picks.push(
+              '<span class="summary-pick"><span class="summary-pick__page">' + p.label + ':</span> ' +
+              '<span class="summary-pick__choice">' + checked.value + '</span></span>'
+            );
+          }
+        });
+
+        var panel = document.getElementById('summaryPanel');
+        var picksEl = document.getElementById('summaryPicks');
+        var countEl = document.getElementById('summaryCount');
+
+        picksEl.innerHTML = picks.length ? picks.join('') : '<span style="color:var(--llc-accent)">No selections yet</span>';
+        countEl.textContent = count + ' / 3 selected';
+
+        if (count > 0) {
+          panel.classList.add('summary-panel--visible');
+        } else {
+          panel.classList.remove('summary-panel--visible');
+        }
+      }
+
+      function compilePlaintext() {
+        var lines = ['London Laser Clinic — Layout Preferences', '==========================================', ''];
+        PAGES.forEach(function (p) {
+          var checked = document.querySelector('input[name="pref_' + p.key + '"]:checked');
+          var notes = document.querySelector('textarea[name="notes_' + p.key + '"]');
+          var pref = checked ? checked.value : 'No selection';
+          lines.push(p.label + ': ' + pref);
+          if (notes && notes.value.trim()) {
+            lines.push('  Notes: ' + notes.value.trim());
+          }
+        });
+        lines.push('');
+        var name = document.getElementById('clientName').value.trim();
+        var email = document.getElementById('clientEmail').value.trim();
+        if (name) lines.push('Name: ' + name);
+        if (email) lines.push('Email: ' + email);
+        return lines.join('\n');
+      }
+
+      function compileFormFields() {
+        var container = document.getElementById('compiledFields');
+        container.innerHTML = '';
+        PAGES.forEach(function (p) {
+          var checked = document.querySelector('input[name="pref_' + p.key + '"]:checked');
+          var notes = document.querySelector('textarea[name="notes_' + p.key + '"]');
+          var pref = checked ? checked.value : 'No selection';
+
+          var prefInput = document.createElement('input');
+          prefInput.type = 'hidden';
+          prefInput.name = p.label + ' Layout';
+          prefInput.value = pref;
+          container.appendChild(prefInput);
+
+          if (notes && notes.value.trim()) {
+            var notesInput = document.createElement('input');
+            notesInput.type = 'hidden';
+            notesInput.name = p.label + ' Notes';
+            notesInput.value = notes.value.trim();
+            container.appendChild(notesInput);
+          }
+        });
+      }
+
+      function hasAnySelection() {
+        for (var i = 0; i < PAGES.length; i++) {
+          if (document.querySelector('input[name="pref_' + PAGES[i].key + '"]:checked')) {
+            return true;
+          }
+        }
+        return false;
+      }
+
+      document.querySelectorAll('.review-card input[type="radio"]').forEach(function (radio) {
+        radio.addEventListener('change', function () {
+          saveData();
+          updateSummary();
+        });
+      });
+
+      document.querySelectorAll('.notes-textarea').forEach(function (textarea) {
+        textarea.addEventListener('blur', function () { saveData(); });
+      });
+
+      document.getElementById('clientName').addEventListener('blur', saveData);
+      document.getElementById('clientEmail').addEventListener('blur', saveData);
+
+      document.getElementById('btnCopy').addEventListener('click', function () {
+        var text = compilePlaintext();
+        var msg = document.getElementById('formMessage');
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(function () {
+            msg.textContent = 'Copied to clipboard.';
+            msg.className = 'form-message form-message--success';
+          }).catch(function () {
+            fallbackCopy(text, msg);
+          });
+        } else {
+          fallbackCopy(text, msg);
+        }
+      });
+
+      function fallbackCopy(text, msg) {
+        var ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        try {
+          document.execCommand('copy');
+          msg.textContent = 'Copied to clipboard.';
+          msg.className = 'form-message form-message--success';
+        } catch (e) {
+          msg.textContent = 'Could not copy. Please select and copy manually.';
+          msg.className = 'form-message form-message--error';
+        }
+        document.body.removeChild(ta);
+      }
+
+      document.getElementById('reviewForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        var form = this;
+        var msg = document.getElementById('formMessage');
+        var btn = document.getElementById('btnSubmit');
+
+        if (!hasAnySelection()) {
+          msg.textContent = 'Please select a preferred layout for at least one page before submitting.';
+          msg.className = 'form-message form-message--error';
+          return;
+        }
+
+        var name = document.getElementById('clientName').value.trim();
+        if (!name) {
+          msg.textContent = 'Please enter your name.';
+          msg.className = 'form-message form-message--error';
+          document.getElementById('clientName').focus();
+          return;
+        }
+
+        compileFormFields();
+        btn.disabled = true;
+        btn.textContent = 'Submitting...';
+        msg.textContent = '';
+        msg.className = 'form-message';
+
+        fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        }).then(function (res) {
+          if (res.ok) {
+            msg.textContent = 'Thank you! Your preferences have been submitted successfully.';
+            msg.className = 'form-message form-message--success';
+            btn.textContent = 'Submitted';
+            try { localStorage.removeItem(STORAGE_KEY); } catch (ex) {}
+          } else {
+            throw new Error('Server error');
+          }
+        }).catch(function () {
+          msg.textContent = 'Something went wrong. Please try the "Copy to Clipboard" button instead and email your preferences.';
+          msg.className = 'form-message form-message--error';
+          btn.disabled = false;
+          btn.textContent = 'Submit Preferences';
+        });
+      });
+
+      restoreData();
+      updateSummary();
+    })();
+  </script>
+
+</body>
+</html>

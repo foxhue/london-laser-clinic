@@ -1,0 +1,352 @@
+/* ===============================================================
+   London Laser Clinic — Design Directions Hub
+   Client review page linking to 3 design directions
+   =============================================================== */
+
+:root {
+  --llc-primary: #333333;
+  --llc-accent: #888888;
+  --llc-accent-hover: #666666;
+  --llc-bg: #F5F5F5;
+  --llc-surface: #E0E0E0;
+  --llc-text: #333333;
+  --llc-text-muted: #888888;
+  --llc-border: rgba(51, 51, 51, 0.1);
+  --llc-font-heading: 'Cormorant Garamond', serif;
+  --llc-font-body: 'Noto Sans', 'Helvetica Neue', Arial, sans-serif;
+  --transition-base: 0.25s ease;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--llc-font-body);
+  font-weight: 400;
+  background-color: var(--llc-bg);
+  color: var(--llc-text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* === BACK LINK === */
+
+.hub-back {
+  display: inline-block;
+  padding: 16px 24px;
+  font-size: 0.8125rem;
+  color: var(--llc-accent);
+  transition: color var(--transition-base);
+}
+
+.hub-back:hover {
+  color: var(--llc-accent-hover);
+}
+
+/* === HEADER === */
+
+.hub-header {
+  padding: 32px 24px;
+  text-align: center;
+  border-bottom: 1px solid var(--llc-border);
+}
+
+.hub-logo__main {
+  font-family: var(--llc-font-heading);
+  font-size: 1.75rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: var(--llc-primary);
+  display: block;
+  line-height: 1;
+}
+
+/* === MAIN CONTENT === */
+
+.hub-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.hub-intro {
+  text-align: center;
+  max-width: 640px;
+  margin-bottom: 64px;
+}
+
+.hub-eyebrow {
+  display: block;
+  font-family: var(--llc-font-heading);
+  font-size: 0.6875rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--llc-accent);
+  margin-bottom: 16px;
+}
+
+.hub-title {
+  font-family: var(--llc-font-heading);
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+  color: var(--llc-primary);
+  margin-bottom: 20px;
+}
+
+.hub-subtitle {
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--llc-text-muted);
+}
+
+/* === DESIGN CARDS GRID === */
+
+.hub-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  width: 100%;
+}
+
+.hub-card {
+  background: #ffffff;
+  border: 1px solid var(--llc-border);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow var(--transition-base),
+              transform var(--transition-base);
+}
+
+.hub-card:hover {
+  box-shadow: 0 8px 32px rgba(51, 51, 51, 0.1);
+  transform: translateY(-4px);
+}
+
+.hub-card__preview {
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hub-card--a .hub-card__preview {
+  background: linear-gradient(135deg, var(--llc-primary) 0%, #555555 100%);
+}
+
+.hub-card--b .hub-card__preview {
+  background: linear-gradient(135deg, var(--llc-primary) 0%, #222222 100%);
+}
+
+.hub-card--c .hub-card__preview {
+  background: linear-gradient(135deg, var(--llc-surface) 0%, var(--llc-accent) 100%);
+}
+
+.hub-card__letter {
+  font-family: var(--llc-font-heading);
+  font-size: clamp(4rem, 8vw, 6rem);
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  line-height: 1;
+  opacity: 0.25;
+  position: absolute;
+}
+
+.hub-card--a .hub-card__letter,
+.hub-card--b .hub-card__letter {
+  color: var(--llc-bg);
+}
+
+.hub-card--c .hub-card__letter {
+  color: var(--llc-primary);
+}
+
+.hub-card__badge {
+  position: relative;
+  z-index: 1;
+  font-family: var(--llc-font-heading);
+  font-size: 0.6875rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 8px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.hub-card--a .hub-card__badge,
+.hub-card--b .hub-card__badge {
+  color: var(--llc-bg);
+}
+
+.hub-card--c .hub-card__badge {
+  color: var(--llc-primary);
+  border-color: rgba(51, 51, 51, 0.25);
+}
+
+.hub-card__body {
+  padding: 32px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.hub-card__name {
+  font-family: var(--llc-font-heading);
+  font-size: clamp(1.125rem, 2vw, 1.375rem);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: var(--llc-primary);
+  margin-bottom: 8px;
+}
+
+.hub-card__mood {
+  font-size: 0.875rem;
+  color: var(--llc-accent);
+  margin-bottom: 16px;
+  font-style: italic;
+}
+
+.hub-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--llc-font-heading);
+  font-size: 0.6875rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--llc-primary);
+  padding: 12px 28px;
+  border: 1px solid var(--llc-primary);
+  transition: background-color var(--transition-base),
+              color var(--transition-base);
+  text-align: center;
+  justify-content: center;
+  margin-top: auto;
+}
+
+.hub-card__link:hover {
+  background-color: var(--llc-primary);
+  color: #ffffff;
+}
+
+.hub-card__link-arrow {
+  transition: transform var(--transition-base);
+}
+
+.hub-card__link:hover .hub-card__link-arrow {
+  transform: translateX(4px);
+}
+
+/* === FOOTER === */
+
+.hub-footer {
+  padding: 32px 24px;
+  text-align: center;
+  border-top: 1px solid var(--llc-border);
+}
+
+.hub-footer__text {
+  font-size: 0.75rem;
+  color: var(--llc-text-muted);
+  letter-spacing: 0.05em;
+}
+
+/* === RESPONSIVE === */
+
+@media (max-width: 991px) {
+  .hub-main {
+    padding: 64px 24px;
+  }
+
+  .hub-intro {
+    margin-bottom: 48px;
+  }
+
+  .hub-card__preview {
+    height: 180px;
+  }
+}
+
+@media (max-width: 767px) {
+  .hub-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    max-width: 480px;
+  }
+
+  .hub-main {
+    padding: 48px 20px;
+  }
+
+  .hub-intro {
+    margin-bottom: 40px;
+  }
+
+  .hub-card__preview {
+    height: 160px;
+  }
+
+  .hub-card__body {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 477px) {
+  .hub-main {
+    padding: 32px 16px;
+  }
+
+  .hub-header {
+    padding: 24px 16px;
+  }
+
+  .hub-card__preview {
+    height: 140px;
+  }
+
+  .hub-card__link {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}

@@ -1,0 +1,137 @@
+/* ===============================================================
+   London Laser Clinic — Website Stylesheet
+   Brand tokens and base styles
+   =============================================================== */
+
+:root {
+  --london-laser-clinic-primary: #333333;
+  --london-laser-clinic-accent: #888888;
+  --london-laser-clinic-accent-hover: #666666;
+  --london-laser-clinic-bg: #F5F5F5;
+  --london-laser-clinic-surface: #E0E0E0;
+  --london-laser-clinic-text: #333333;
+  --london-laser-clinic-light: #ffffff;
+  --london-laser-clinic-font-heading: 'Cormorant Garamond', serif;
+  --london-laser-clinic-font-body: 'Noto Sans', sans-serif;
+}
+
+/* === RESET === */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--london-laser-clinic-font-body);
+  font-weight: 400;
+  color: var(--london-laser-clinic-text);
+  background-color: var(--london-laser-clinic-bg);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul, ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* === LAYOUT === */
+
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+/* === TYPOGRAPHY === */
+
+h1, h2, h3, h4 {
+  font-family: var(--london-laser-clinic-font-heading);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--london-laser-clinic-text);
+}
+
+h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+h2 { font-size: clamp(1.5rem, 3.5vw, 2.375rem); }
+h3 { font-size: clamp(1.125rem, 2vw, 1.5rem); }
+h4 { font-size: 1.125rem; }
+
+p {
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* === UTILITIES === */
+
+.u-text-center { text-align: center; }
+.u-mb-sm  { margin-bottom: 12px; }
+.u-mb-md  { margin-bottom: 24px; }
+.u-mb-lg  { margin-bottom: 48px; }
+
+/* === RESPONSIVE === */
+
+@media (max-width: 992px) {
+  .section {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+}
+
+@media (max-width: 767px) {
+  .section {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (max-width: 477px) {
+  .section {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+  html { scroll-behavior: auto; }
+}

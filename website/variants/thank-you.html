@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You — London Laser Clinic</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Noto+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --llc-primary: #333333;
+      --llc-accent: #888888;
+      --llc-accent-hover: #666666;
+      --llc-bg: #F5F5F5;
+      --llc-surface: #E0E0E0;
+      --llc-font-heading: 'Cormorant Garamond', serif;
+      --llc-font-body: 'Noto Sans', sans-serif;
+    }
+
+    body {
+      font-family: var(--llc-font-body);
+      font-weight: 400;
+      color: var(--llc-primary);
+      background: var(--llc-bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hub-header {
+      text-align: center;
+      padding: 48px 24px 24px;
+      border-bottom: 1px solid rgba(51,51,51,0.1);
+    }
+
+    .hub-logo__main {
+      font-family: var(--llc-font-heading);
+      font-size: 1.75rem;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      color: var(--llc-primary);
+    }
+
+    .thankyou-main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 24px;
+    }
+
+    .thankyou-card {
+      background: #ffffff;
+      border-radius: 8px;
+      padding: 56px 48px;
+      box-shadow: 0 2px 12px rgba(51,51,51,0.06);
+      max-width: 540px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .thankyou-eyebrow {
+      display: block;
+      font-family: var(--llc-font-heading);
+      font-size: 0.6875rem;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--llc-accent);
+      margin-bottom: 16px;
+    }
+
+    .thankyou-title {
+      font-family: var(--llc-font-heading);
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      color: var(--llc-primary);
+      margin-bottom: 20px;
+    }
+
+    .thankyou-divider {
+      width: 48px;
+      height: 1px;
+      background: var(--llc-accent);
+      margin: 0 auto 20px;
+    }
+
+    .thankyou-message {
+      font-size: 0.9375rem;
+      color: var(--llc-accent-hover);
+      line-height: 1.7;
+      margin-bottom: 36px;
+      max-width: 420px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .thankyou-links {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .thankyou-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 28px;
+      font-family: var(--llc-font-heading);
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 100px;
+      transition: all 0.25s ease;
+    }
+
+    .thankyou-link--primary {
+      background: var(--llc-primary);
+      color: #ffffff;
+      border: 1px solid var(--llc-primary);
+    }
+
+    .thankyou-link--primary:hover {
+      background: #222222;
+    }
+
+    .thankyou-link--secondary {
+      background: transparent;
+      color: var(--llc-primary);
+      border: 1px solid var(--llc-accent);
+    }
+
+    .thankyou-link--secondary:hover {
+      background: var(--llc-surface);
+    }
+
+    .hub-footer {
+      text-align: center;
+      padding: 24px;
+      border-top: 1px solid rgba(51,51,51,0.1);
+    }
+
+    .hub-footer__text {
+      font-size: 0.75rem;
+      color: var(--llc-accent);
+    }
+
+    @media (max-width: 480px) {
+      .thankyou-card {
+        padding: 40px 24px;
+      }
+
+      .thankyou-links {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .thankyou-link {
+        width: 100%;
+        max-width: 240px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hub-header">
+    <span class="hub-logo__main">London Laser Clinic</span>
+  </header>
+
+  <main class="thankyou-main">
+    <div class="thankyou-card">
+      <span class="thankyou-eyebrow">Client Review</span>
+      <h1 class="thankyou-title">Thank You</h1>
+      <div class="thankyou-divider" aria-hidden="true"></div>
+      <p class="thankyou-message">Your layout preferences have been submitted. We will review your selections and be in touch shortly.</p>
+      <div class="thankyou-links">
+        <a href="index.html" class="thankyou-link thankyou-link--primary">Back to Review</a>
+        <a href="../../index.html" class="thankyou-link thankyou-link--secondary">Project Hub</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="hub-footer">
+    <p class="hub-footer__text">&copy; 2026 London Laser Clinic</p>
+  </footer>
+
+</body>
+</html>
