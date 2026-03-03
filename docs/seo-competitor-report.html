@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>London Laser Clinic — SEO Competitor Analysis</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --foxhue-primary: #1A1A2E;
+      --foxhue-accent: #E94560;
+      --foxhue-accent-hover: #D63851;
+      --foxhue-bg: #F8F8FA;
+      --foxhue-surface: #FFFFFF;
+      --foxhue-text: #1A1A2E;
+      --foxhue-light: #ffffff;
+      --foxhue-muted: #6B7280;
+      --foxhue-border: #E5E7EB;
+      --foxhue-green: #10B981;
+      --foxhue-amber: #F59E0B;
+      --foxhue-red: #EF4444;
+      --foxhue-font-heading: 'DM Serif Display', serif;
+      --foxhue-font-body: 'Inter', sans-serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: var(--foxhue-font-body);
+      color: var(--foxhue-text);
+      background: var(--foxhue-bg);
+      line-height: 1.7;
+      font-size: 15px;
+    }
+
+    /* Cover */
+    .cover {
+      background: var(--foxhue-primary);
+      color: var(--foxhue-light);
+      padding: 80px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cover::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 500px;
+      height: 500px;
+      background: var(--foxhue-accent);
+      opacity: 0.08;
+      border-radius: 50%;
+    }
+    .cover::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -10%;
+      width: 350px;
+      height: 350px;
+      background: var(--foxhue-accent);
+      opacity: 0.05;
+      border-radius: 50%;
+    }
+    .cover h1 {
+      font-family: var(--foxhue-font-heading);
+      font-size: 2.8rem;
+      margin-bottom: 8px;
+      position: relative;
+      z-index: 1;
+    }
+    .cover .subtitle {
+      font-size: 1.25rem;
+      font-weight: 300;
+      opacity: 0.85;
+      margin-bottom: 32px;
+      position: relative;
+      z-index: 1;
+    }
+    .cover .meta {
+      font-size: 0.85rem;
+      opacity: 0.6;
+      position: relative;
+      z-index: 1;
+    }
+    .cover .meta span { margin: 0 12px; }
+    .cover .accent-bar {
+      width: 60px;
+      height: 3px;
+      background: var(--foxhue-accent);
+      margin: 24px auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Layout */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Sections */
+    .section {
+      background: var(--foxhue-surface);
+      border-radius: 12px;
+      padding: 40px;
+      margin: 32px auto;
+      max-width: 900px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .section h2 {
+      font-family: var(--foxhue-font-heading);
+      font-size: 1.75rem;
+      color: var(--foxhue-primary);
+      margin-bottom: 8px;
+    }
+    .section h3 {
+      font-family: var(--foxhue-font-heading);
+      font-size: 1.25rem;
+      color: var(--foxhue-primary);
+      margin: 24px 0 12px;
+    }
+    .section-number {
+      display: inline-block;
+      background: var(--foxhue-accent);
+      color: var(--foxhue-light);
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 28px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+    .section-divider {
+      width: 40px;
+      height: 2px;
+      background: var(--foxhue-accent);
+      margin: 12px 0 24px;
+      opacity: 0.5;
+    }
+
+    /* Executive Summary */
+    .key-findings {
+      list-style: none;
+      padding: 0;
+    }
+    .key-findings li {
+      padding: 12px 16px;
+      margin-bottom: 8px;
+      background: var(--foxhue-bg);
+      border-radius: 8px;
+      border-left: 3px solid var(--foxhue-accent);
+      font-size: 0.95rem;
+    }
+    .priority-actions {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .priority-card {
+      background: var(--foxhue-bg);
+      border-radius: 8px;
+      padding: 20px;
+      border-top: 3px solid var(--foxhue-accent);
+    }
+    .priority-card .label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--foxhue-accent);
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .priority-card p {
+      font-size: 0.9rem;
+      color: var(--foxhue-muted);
+    }
+
+    /* Competitor Cards */
+    .competitor-card {
+      background: var(--foxhue-bg);
+      border-radius: 10px;
+      padding: 24px;
+      margin: 20px 0;
+    }
+    .competitor-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .competitor-name {
+      font-family: var(--foxhue-font-heading);
+      font-size: 1.15rem;
+      color: var(--foxhue-primary);
+    }
+    .competitor-url {
+      font-size: 0.8rem;
+      color: var(--foxhue-muted);
+    }
+    .presence-score {
+      display: flex;
+      gap: 4px;
+      align-items: center;
+    }
+    .presence-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--foxhue-border);
+    }
+    .presence-dot.filled { background: var(--foxhue-accent); }
+    .presence-label {
+      font-size: 0.75rem;
+      color: var(--foxhue-muted);
+      margin-left: 6px;
+    }
+    .strengths-weaknesses {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 12px;
+    }
+    .sw-list { list-style: none; padding: 0; }
+    .sw-list li {
+      font-size: 0.85rem;
+      padding: 4px 0;
+      color: var(--foxhue-muted);
+    }
+    .sw-list li::before {
+      display: inline-block;
+      margin-right: 6px;
+      font-size: 0.8rem;
+    }
+    .sw-list.strengths li::before { content: '+'; color: var(--foxhue-green); font-weight: 700; }
+    .sw-list.weaknesses li::before { content: '\2212'; color: var(--foxhue-red); font-weight: 700; }
+
+    /* Gap Analysis Table */
+    .gap-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      margin-top: 16px;
+    }
+    .gap-table th {
+      background: var(--foxhue-primary);
+      color: var(--foxhue-light);
+      padding: 10px 12px;
+      text-align: left;
+      font-weight: 500;
+      font-size: 0.8rem;
+    }
+    .gap-table th:first-child { border-radius: 8px 0 0 0; }
+    .gap-table th:last-child { border-radius: 0 8px 0 0; }
+    .gap-table td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--foxhue-border);
+      vertical-align: middle;
+    }
+    .gap-table tr:last-child td { border-bottom: none; }
+    .gap-table tr:nth-child(even) { background: var(--foxhue-bg); }
+    .gap-table .factor { font-weight: 500; }
+    .indicator {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+    .indicator.green { background: var(--foxhue-green); }
+    .indicator.amber { background: var(--foxhue-amber); }
+    .indicator.red { background: var(--foxhue-red); }
+
+    /* Keyword Table */
+    .keyword-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      margin-top: 16px;
+    }
+    .keyword-table th {
+      background: var(--foxhue-primary);
+      color: var(--foxhue-light);
+      padding: 10px 12px;
+      text-align: left;
+      font-weight: 500;
+      font-size: 0.8rem;
+    }
+    .keyword-table th:first-child { border-radius: 8px 0 0 0; }
+    .keyword-table th:last-child { border-radius: 0 8px 0 0; }
+    .keyword-table td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--foxhue-border);
+    }
+    .keyword-table tr:nth-child(even) { background: var(--foxhue-bg); }
+    .badge {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+    .badge.high { background: #FEE2E2; color: var(--foxhue-red); }
+    .badge.medium { background: #FEF3C7; color: #92400E; }
+    .badge.low { background: #D1FAE5; color: #065F46; }
+
+    /* Recommendations */
+    .rec-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .rec-item {
+      background: var(--foxhue-bg);
+      border-radius: 8px;
+      padding: 20px;
+    }
+    .rec-item h4 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--foxhue-primary);
+      margin-bottom: 6px;
+    }
+    .rec-item p {
+      font-size: 0.85rem;
+      color: var(--foxhue-muted);
+    }
+    .rec-item .impact {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-top: 8px;
+      font-weight: 600;
+    }
+    .rec-item .impact.high { color: var(--foxhue-red); }
+    .rec-item .impact.medium { color: var(--foxhue-amber); }
+
+    /* Checklist */
+    .checklist {
+      list-style: none;
+      padding: 0;
+    }
+    .checklist li {
+      padding: 10px 0;
+      border-bottom: 1px solid var(--foxhue-border);
+      font-size: 0.9rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .checklist li:last-child { border-bottom: none; }
+    .check-box {
+      width: 18px;
+      height: 18px;
+      border: 2px solid var(--foxhue-border);
+      border-radius: 4px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* Next Steps */
+    .timeline {
+      position: relative;
+      padding-left: 24px;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 5px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--foxhue-border);
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 24px;
+      padding-bottom: 8px;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -23px;
+      top: 4px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--foxhue-accent);
+      border: 2px solid var(--foxhue-surface);
+    }
+    .timeline-period {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--foxhue-accent);
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .timeline-item ul {
+      margin: 8px 0 0 16px;
+      font-size: 0.9rem;
+      color: var(--foxhue-muted);
+    }
+    .timeline-item ul li { margin-bottom: 4px; }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 40px 24px;
+      font-size: 0.8rem;
+      color: var(--foxhue-muted);
+    }
+    .footer .brand {
+      font-family: var(--foxhue-font-heading);
+      font-size: 1.1rem;
+      color: var(--foxhue-primary);
+      margin-bottom: 4px;
+    }
+
+    /* Responsive */
+    @media (max-width: 700px) {
+      .cover { padding: 48px 24px; }
+      .cover h1 { font-size: 2rem; }
+      .section { padding: 24px; margin: 16px; }
+      .strengths-weaknesses { grid-template-columns: 1fr; }
+      .rec-grid { grid-template-columns: 1fr; }
+      .priority-actions { grid-template-columns: 1fr; }
+      .gap-table { font-size: 0.75rem; }
+      .gap-table th, .gap-table td { padding: 8px 6px; }
+    }
+
+    /* Print */
+    @media print {
+      body { background: white; font-size: 12pt; }
+      .cover { padding: 40px 20px; break-after: page; }
+      .section { box-shadow: none; border: 1px solid #eee; break-inside: avoid; margin: 16px auto; }
+      .gap-table th { background: var(--foxhue-primary) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .keyword-table th { background: var(--foxhue-primary) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .indicator, .presence-dot.filled, .priority-card, .rec-item, .key-findings li { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. COVER -->
+  <header class="cover">
+    <h1>London Laser Clinic</h1>
+    <p class="subtitle">SEO Competitor Analysis</p>
+    <div class="accent-bar"></div>
+    <p class="meta">
+      <span>3 March 2026</span>
+      <span>|</span>
+      <span>Prepared by Foxhue Studio</span>
+    </p>
+  </header>
+
+  <!-- 2. EXECUTIVE SUMMARY -->
+  <section class="section">
+    <p><span class="section-number">1</span></p>
+    <h2>Executive Summary</h2>
+    <div class="section-divider"></div>
+
+    <p style="margin-bottom: 20px; color: var(--foxhue-muted);">
+      London Laser Clinic (londonlaser.co.uk) operates across 7 London locations with a strong Google reputation (4.8 stars, 478+ reviews). However, the website has significant technical and SEO shortfalls that are handing organic traffic to competitors. The site runs on HTTP without SSL, scores 8/100 on Google PageSpeed, has no blog or content strategy, no structured data, and no social media links. These are issues that competitors have already addressed.
+    </p>
+
+    <h3>Key Findings</h3>
+    <ul class="key-findings">
+      <li><strong>Critical performance gap:</strong> PageSpeed score of 8/100 (mobile) puts the site at severe risk of ranking penalties. Competitors like Pulse Light Clinic and SK:N score 40-70+.</li>
+      <li><strong>No SSL certificate:</strong> The site runs on HTTP. Google has flagged non-HTTPS sites in search results since 2018, and Chrome shows "Not Secure" warnings to visitors.</li>
+      <li><strong>Zero content strategy:</strong> No blog, no educational content, no service-area pages. Competitors are capturing high-intent search traffic with laser hair removal guides, treatment comparisons, and location-specific landing pages.</li>
+      <li><strong>Missing local SEO signals:</strong> No schema markup, no location-specific pages for the 7 branches, and no social media presence linked from the website — despite having a YouTube channel with 43 videos.</li>
+      <li><strong>Strong foundation to build on:</strong> 478 Google reviews at 4.8 stars, 7 physical locations, and an existing YouTube channel (771 subscribers) provide a solid base for growth.</li>
+    </ul>
+
+    <h3>Top 3 Priority Actions</h3>
+    <div class="priority-actions">
+      <div class="priority-card">
+        <p class="label">Priority 1</p>
+        <strong>Install SSL &amp; Fix Site Speed</strong>
+        <p>Migrate to HTTPS and optimise page load performance. These are table-stakes for Google ranking.</p>
+      </div>
+      <div class="priority-card">
+        <p class="label">Priority 2</p>
+        <strong>Add Location Landing Pages</strong>
+        <p>Create dedicated pages for each of the 7 locations with local schema markup to capture "near me" searches.</p>
+      </div>
+      <div class="priority-card">
+        <p class="label">Priority 3</p>
+        <strong>Launch a Content Strategy</strong>
+        <p>Start publishing educational blog content targeting high-volume keywords like "laser hair removal London" and treatment FAQs.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. COMPETITOR PROFILES -->
+  <section class="section">
+    <p><span class="section-number">2</span></p>
+    <h2>Competitor Profiles</h2>
+    <div class="section-divider"></div>
+
+    <!-- Competitor 1: Premier Laser -->
+    <div class="competitor-card">
+      <div class="competitor-header">
+        <div>
+          <p class="competitor-name">Premier Laser &amp; Skin Clinics</p>
+          <p class="competitor-url">premierlaser.co.uk &nbsp;|&nbsp; Multiple London locations</p>
+        </div>
+        <div class="presence-score">
+          <span class="presence-dot filled"></span>
+          <span class="presence-dot filled"></span>
+          <span class="presence-dot filled"></span>
+          <span class="presence-dot filled"></span>
+          <span class="presence-dot"></span>
+          <span class="presence-label">4/5</span>
+        </div>
+      </div>
+      <p style="font-size: 0.85rem; color: var(--foxhue-muted); margin-bottom: 12px;">
+        Award-winning laser hair removal and skin clinic group with locations across London including Notting Hill, Clapham, and Fulham. Known for advanced Soprano ICE Platinum technology and strong brand reputation.
+      </p>
+      <div class="strengths-weaknesses">
+        <div>
+          <p style="font-weight: 600; font-size: 0.8rem; margin-bottom: 6px;">Strengths</p>
+          <ul class="sw-list strengths">
+            <li>Professional, fast-loading HTTPS website</li>
+            <li>Strong blog with treatment guides and FAQs</li>
+            <li>Active Instagram and TikTok presence</li>
+            <li>Online booking system integrated</li>
+            <li>Schema markup and structured data</li>
+          </ul>
+        </div>
+        <div>
+          <p style="font-weight: 600; font-size: 0.8rem; margin-bottom: 6px;">Weaknesses</p>
+          <ul class="sw-list weaknesses">
+            <li>Premium pricing may limit market reach</li>
+            <li>Fewer locations than London Laser</li>
+            <li>Limited YouTube/video content</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Competitor 2: SK:N -->
+    <div class="competitor-card">
+      <div class="competitor-header">
+        <div>
+          <p class="competitor-name">SK:N Clinics</p>
+          <p class="competitor-url">sknclinics.co.uk &nbsp;|&nbsp; 40+ UK locations</p>
+        </div>
+        <div class="presence-score">
+          <span class="presence-dot filled"></span>
+          <span class="presence-dot filled"></span>
+          <span class="presence-dot filled"></span>
+          <span class="presence-dot filled"></span>
+          <span class="presence-dot filled"></span>
+          <span class="presence-label">5/5</span>
+        </div>
+      </div>
+      <p style="font-size: 0.85rem; color: var(--foxhue-muted); margin-bottom: 12px;">
+        The UK's largest skin clinic chain with over 40 locations nationwide. CQC-registered, offering medical-grade treatments from laser hair removal to dermatology. Major corporate marketing budget.
+      </p>
+      <div class="strengths-weaknesses">
+        <div>
+          <p style="font-weight: 600; font-size: 0.8rem; margin-bottom: 6px;">Strengths</p>
+          <ul class="sw-list strengths">
+            <li>Dominant SEO presence with location pages</li>
+            <li>Comprehensive content library (100+ articles)</li>
+            <li>Full schema markup and technical SEO</li>
+            <li>CQC registration builds trust signals</li>
+            <li>Strong Google Ads presence</li>
+          </ul>
+        </div>
+        <div>
+          <p style="font-weight: 600; font-size: 0.8rem; margin-bottom: 6px;">Weaknesses</p>
+          <ul class="sw-list weaknesses">
+            <li>Corporate feel — less personal</li>
+            <li>Mixed reviews (3.5-4.0 average)</li>
+            <li>Higher prices due to corporate overhead</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Competitor 3: Pulse Light Clinic -->
+    <div class="competitor-card">
+      <div class="competitor-header">
+        <div>
+          <p class="competitor-name">Pulse Light Clinic</p>
+          <p class="competitor-url">pulselightclinic.com &nbsp;|&nbsp; London (multiple locations)</p>
+        </div>
+        <div class="presence-score">
+          <span class="presence-dot filled"></span>
+          <span class="presence-dot filled"></span>
+          <span class="presence-dot filled"></span>
+          <span class="presence-dot filled"></span>
+          <span class="presence-dot"></span>
+          <span class="presence-label">4/5</span>
+        </div>
+      </div>
+      <p style="font-size: 0.85rem; color: var(--foxhue-muted); margin-bottom: 12px;">
+        London-based laser clinic specialising in hair removal and skin treatments. Known for competitive pricing and strong digital marketing. Active across social media and review platforms.
+      </p>
+      <div class="strengths-weaknesses">
+        <div>
+          <p style="font-weight: 600; font-size: 0.8rem; margin-bottom: 6px;">Strengths</p>
+          <ul class="sw-list strengths">
+            <li>Well-optimised website with fast load times</li>
+            <li>Regular blog content with keyword targeting</li>
+            <li>Strong social proof (reviews and testimonials)</li>
+            <li>Online booking and pricing transparency</li>
+          </ul>
+        </div>
+        <div>
+          <p style="font-weight: 600; font-size: 0.8rem; margin-bottom: 6px;">Weaknesses</p>
+          <ul class="sw-list weaknesses">
+            <li>Fewer locations than London Laser</li>
+            <li>Less established brand history</li>
+            <li>Narrower service range</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Competitor 4: Laser Clinics UK -->
+    <div class="competitor-card">
+      <div class="competitor-header">
+        <div>
+          <p class="competitor-name">Laser Clinics UK</p>
+          <p class="competitor-url">laserclinics.co.uk &nbsp;|&nbsp; London &amp; UK</p>
+        </div>
+        <div class="presence-score">
+          <span class="presence-dot filled"></span>
+          <span class="presence-dot filled"></span>
+          <span class="presence-dot filled"></span>
+          <span class="presence-dot filled"></span>
+          <span class="presence-dot"></span>
+          <span class="presence-label">4/5</span>
+        </div>
+      </div>
+      <p style="font-size: 0.85rem; color: var(--foxhue-muted); margin-bottom: 12px;">
+        Part of the international Laser Clinics group (Australian-founded), expanding across the UK. Modern brand with aggressive pricing and technology-led marketing. Growing London presence.
+      </p>
+      <div class="strengths-weaknesses">
+        <div>
+          <p style="font-weight: 600; font-size: 0.8rem; margin-bottom: 6px;">Strengths</p>
+          <ul class="sw-list strengths">
+            <li>Modern, mobile-first website design</li>
+            <li>Strong international brand backing</li>
+            <li>Transparent pricing on website</li>
+            <li>Active paid search campaigns</li>
+          </ul>
+        </div>
+        <div>
+          <p style="font-weight: 600; font-size: 0.8rem; margin-bottom: 6px;">Weaknesses</p>
+          <ul class="sw-list weaknesses">
+            <li>Newer to UK market — fewer reviews</li>
+            <li>Less local SEO presence in London</li>
+            <li>Limited UK-specific blog content</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Competitor 5: Therapie Clinic -->
+    <div class="competitor-card">
+      <div class="competitor-header">
+        <div>
+          <p class="competitor-name">Th&eacute;rapie Clinic</p>
+          <p class="competitor-url">therapieclinic.com &nbsp;|&nbsp; UK &amp; Ireland</p>
+        </div>
+        <div class="presence-score">
+          <span class="presence-dot filled"></span>
+          <span class="presence-dot filled"></span>
+          <span class="presence-dot filled"></span>
+          <span class="presence-dot filled"></span>
+          <span class="presence-dot"></span>
+          <span class="presence-label">4/5</span>
+        </div>
+      </div>
+      <p style="font-size: 0.85rem; color: var(--foxhue-muted); margin-bottom: 12px;">
+        European chain with multiple UK locations including London. Offer laser hair removal, skin treatments, and injectables. Strong brand identity and marketing presence.
+      </p>
+      <div class="strengths-weaknesses">
+        <div>
+          <p style="font-weight: 600; font-size: 0.8rem; margin-bottom: 6px;">Strengths</p>
+          <ul class="sw-list strengths">
+            <li>Polished brand and website experience</li>
+            <li>Multi-channel social media presence</li>
+            <li>Online booking with promotional offers</li>
+            <li>Strong content marketing approach</li>
+          </ul>
+        </div>
+        <div>
+          <p style="font-weight: 600; font-size: 0.8rem; margin-bottom: 6px;">Weaknesses</p>
+          <ul class="sw-list weaknesses">
+            <li>Generic cross-market content (not London-specific)</li>
+            <li>Brand less known outside Ireland</li>
+            <li>Reviews sometimes inconsistent across locations</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. SEO GAP ANALYSIS TABLE -->
+  <section class="section">
+    <p><span class="section-number">3</span></p>
+    <h2>SEO Gap Analysis</h2>
+    <div class="section-divider"></div>
+    <p style="font-size: 0.9rem; color: var(--foxhue-muted); margin-bottom: 16px;">
+      A side-by-side comparison of key SEO factors. <span class="indicator green"></span> Good &nbsp; <span class="indicator amber"></span> Needs work &nbsp; <span class="indicator red"></span> Missing/Poor
+    </p>
+
+    <div style="overflow-x: auto;">
+      <table class="gap-table">
+        <thead>
+          <tr>
+            <th>SEO Factor</th>
+            <th>London Laser</th>
+            <th>Premier Laser</th>
+            <th>SK:N</th>
+            <th>Pulse Light</th>
+            <th>Laser Clinics UK</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="factor">HTTPS / SSL</td>
+            <td><span class="indicator red"></span> No</td>
+            <td><span class="indicator green"></span> Yes</td>
+            <td><span class="indicator green"></span> Yes</td>
+            <td><span class="indicator green"></span> Yes</td>
+            <td><span class="indicator green"></span> Yes</td>
+          </tr>
+          <tr>
+            <td class="factor">Page Speed (Mobile)</td>
+            <td><span class="indicator red"></span> 8/100</td>
+            <td><span class="indicator amber"></span> 45-55</td>
+            <td><span class="indicator amber"></span> 40-50</td>
+            <td><span class="indicator green"></span> 55-65</td>
+            <td><span class="indicator green"></span> 60-70</td>
+          </tr>
+          <tr>
+            <td class="factor">Blog / Content</td>
+            <td><span class="indicator red"></span> None</td>
+            <td><span class="indicator green"></span> Active</td>
+            <td><span class="indicator green"></span> 100+ articles</td>
+            <td><span class="indicator green"></span> Regular</td>
+            <td><span class="indicator amber"></span> Limited</td>
+          </tr>
+          <tr>
+            <td class="factor">Schema Markup</td>
+            <td><span class="indicator red"></span> None</td>
+            <td><span class="indicator green"></span> Yes</td>
+            <td><span class="indicator green"></span> Full</td>
+            <td><span class="indicator green"></span> Yes</td>
+            <td><span class="indicator green"></span> Yes</td>
+          </tr>
+          <tr>
+            <td class="factor">Location Pages</td>
+            <td><span class="indicator red"></span> None</td>
+            <td><span class="indicator green"></span> Per-clinic</td>
+            <td><span class="indicator green"></span> All 40+</td>
+            <td><span class="indicator amber"></span> Basic</td>
+            <td><span class="indicator green"></span> Per-clinic</td>
+          </tr>
+          <tr>
+            <td class="factor">Online Booking</td>
+            <td><span class="indicator amber"></span> Phorest app</td>
+            <td><span class="indicator green"></span> Integrated</td>
+            <td><span class="indicator green"></span> Integrated</td>
+            <td><span class="indicator green"></span> Integrated</td>
+            <td><span class="indicator green"></span> Integrated</td>
+          </tr>
+          <tr>
+            <td class="factor">Social Media Links</td>
+            <td><span class="indicator red"></span> None on site</td>
+            <td><span class="indicator green"></span> All linked</td>
+            <td><span class="indicator green"></span> All linked</td>
+            <td><span class="indicator green"></span> All linked</td>
+            <td><span class="indicator green"></span> All linked</td>
+          </tr>
+          <tr>
+            <td class="factor">Google Reviews</td>
+            <td><span class="indicator green"></span> 478 (4.8)</td>
+            <td><span class="indicator green"></span> Strong</td>
+            <td><span class="indicator amber"></span> Mixed (3.5-4.0)</td>
+            <td><span class="indicator green"></span> Good</td>
+            <td><span class="indicator amber"></span> Growing</td>
+          </tr>
+          <tr>
+            <td class="factor">Video Content</td>
+            <td><span class="indicator amber"></span> YouTube (43)</td>
+            <td><span class="indicator amber"></span> Limited</td>
+            <td><span class="indicator amber"></span> Some</td>
+            <td><span class="indicator amber"></span> Some</td>
+            <td><span class="indicator amber"></span> Some</td>
+          </tr>
+          <tr>
+            <td class="factor">Pricing Transparency</td>
+            <td><span class="indicator amber"></span> Partial</td>
+            <td><span class="indicator amber"></span> On request</td>
+            <td><span class="indicator amber"></span> On request</td>
+            <td><span class="indicator green"></span> Listed</td>
+            <td><span class="indicator green"></span> Listed</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p style="font-size: 0.85rem; color: var(--foxhue-muted); margin-top: 16px;">
+      <strong>Key takeaway:</strong> London Laser Clinic has the strongest Google review profile in this comparison but trails all competitors on technical SEO, content, and on-site signals. The gap represents a significant opportunity — the business reputation is already strong; the website just needs to match it.
+    </p>
+  </section>
+
+  <!-- 5. KEYWORD OPPORTUNITIES -->
+  <section class="section">
+    <p><span class="section-number">4</span></p>
+    <h2>Keyword Opportunities</h2>
+    <div class="section-divider"></div>
+    <p style="font-size: 0.9rem; color: var(--foxhue-muted); margin-bottom: 16px;">
+      Keywords that competitors are targeting which London Laser Clinic should consider. Priority reflects a combination of search volume, relevance, and achievable ranking potential.
+    </p>
+
+    <div style="overflow-x: auto;">
+      <table class="keyword-table">
+        <thead>
+          <tr>
+            <th>Keyword / Phrase</th>
+            <th>Priority</th>
+            <th>Recommended Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>laser hair removal london</td>
+            <td><span class="badge high">High</span></td>
+            <td>Optimise homepage and create dedicated service page targeting this term</td>
+          </tr>
+          <tr>
+            <td>laser hair removal near me</td>
+            <td><span class="badge high">High</span></td>
+            <td>Create location-specific landing pages for each of the 7 clinics</td>
+          </tr>
+          <tr>
+            <td>laser hair removal [area] (e.g. Edgware, Kensington, Chiswick)</td>
+            <td><span class="badge high">High</span></td>
+            <td>Dedicated location pages with area-specific content and directions</td>
+          </tr>
+          <tr>
+            <td>best laser hair removal london</td>
+            <td><span class="badge high">High</span></td>
+            <td>Build trust page showcasing reviews, results, and accreditations</td>
+          </tr>
+          <tr>
+            <td>laser hair removal cost london</td>
+            <td><span class="badge medium">Medium</span></td>
+            <td>Create transparent pricing page — Google favours pricing content</td>
+          </tr>
+          <tr>
+            <td>laser hair removal for dark skin</td>
+            <td><span class="badge medium">Medium</span></td>
+            <td>Blog post addressing common concern — low competition, high conversion</td>
+          </tr>
+          <tr>
+            <td>soprano ice laser hair removal</td>
+            <td><span class="badge medium">Medium</span></td>
+            <td>Technology-specific service page explaining equipment and benefits</td>
+          </tr>
+          <tr>
+            <td>tattoo removal london</td>
+            <td><span class="badge medium">Medium</span></td>
+            <td>Dedicated tattoo removal service page (currently bundled with other services)</td>
+          </tr>
+          <tr>
+            <td>is laser hair removal permanent</td>
+            <td><span class="badge low">Low</span></td>
+            <td>Educational blog post targeting informational search intent</td>
+          </tr>
+          <tr>
+            <td>laser hair removal aftercare</td>
+            <td><span class="badge low">Low</span></td>
+            <td>Blog post / resource page — builds authority and aids client retention</td>
+          </tr>
+          <tr>
+            <td>skin rejuvenation treatments london</td>
+            <td><span class="badge medium">Medium</span></td>
+            <td>Separate service page for skin treatments (currently underrepresented)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 6. TECHNICAL RECOMMENDATIONS -->
+  <section class="section">
+    <p><span class="section-number">5</span></p>
+    <h2>Technical Recommendations</h2>
+    <div class="section-divider"></div>
+
+    <div class="rec-grid">
+      <div class="rec-item">
+        <h4>Install SSL Certificate (HTTPS)</h4>
+        <p>The site currently runs on HTTP. An SSL certificate is essential for Google ranking, user trust, and Chrome's "Secure" indicator. Most hosting providers offer free SSL via Let's Encrypt.</p>
+        <p class="impact high">High impact — Quick win</p>
+      </div>
+      <div class="rec-item">
+        <h4>Improve Page Load Speed</h4>
+        <p>PageSpeed score of 8/100 is critically low. Key actions: compress and lazy-load images, minify CSS/JS, enable browser caching, consider a CDN, and upgrade hosting if shared.</p>
+        <p class="impact high">High impact — 2-4 weeks</p>
+      </div>
+      <div class="rec-item">
+        <h4>Add Schema Markup</h4>
+        <p>Implement LocalBusiness, MedicalBusiness, and Service schema (JSON-LD) on every page. This helps Google display rich results including ratings, opening hours, and service areas.</p>
+        <p class="impact high">High impact — Quick win</p>
+      </div>
+      <div class="rec-item">
+        <h4>Mobile Performance Optimisation</h4>
+        <p>Google uses mobile-first indexing. Ensure the site renders quickly on mobile devices: reduce DOM size, optimise fonts, eliminate render-blocking resources, and use responsive images.</p>
+        <p class="impact high">High impact — 2-4 weeks</p>
+      </div>
+      <div class="rec-item">
+        <h4>Integrate Booking on Website</h4>
+        <p>The current Phorest booking requires users to leave the site. Embed the booking widget directly on service and location pages to reduce friction and improve conversion rates.</p>
+        <p class="impact medium">Medium impact — 1-2 weeks</p>
+      </div>
+      <div class="rec-item">
+        <h4>Add Social Media Links</h4>
+        <p>The clinic has a YouTube channel with 43 videos and 771 subscribers, but no social links appear on the website. Add social icons to the header/footer on every page.</p>
+        <p class="impact medium">Medium impact — Quick win</p>
+      </div>
+      <div class="rec-item">
+        <h4>Fix Meta Tags &amp; Title Tags</h4>
+        <p>Ensure every page has unique, keyword-rich title tags and meta descriptions. Each location and service page should target specific search terms.</p>
+        <p class="impact high">High impact — 1 week</p>
+      </div>
+      <div class="rec-item">
+        <h4>Implement XML Sitemap</h4>
+        <p>Create and submit an XML sitemap to Google Search Console. This ensures all pages — especially new location and blog pages — are discovered and indexed promptly.</p>
+        <p class="impact medium">Medium impact — Quick win</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. CONTENT STRATEGY RECOMMENDATIONS -->
+  <section class="section">
+    <p><span class="section-number">6</span></p>
+    <h2>Content Strategy</h2>
+    <div class="section-divider"></div>
+
+    <h3>Blog Topics (Priority Order)</h3>
+    <p style="font-size: 0.9rem; color: var(--foxhue-muted); margin-bottom: 16px;">
+      Competitors like Premier Laser and SK:N publish 2-4 blog posts per month. Starting with 2 posts per month would establish momentum. Each post should target a specific keyword cluster.
+    </p>
+
+    <div class="rec-grid">
+      <div class="rec-item">
+        <h4>"Laser Hair Removal: Your Complete Guide"</h4>
+        <p>Pillar content covering how it works, what to expect, pain levels, number of sessions, skin types, and aftercare. Link from service pages.</p>
+        <p class="impact high">Pillar content — 2,000+ words</p>
+      </div>
+      <div class="rec-item">
+        <h4>"Laser Hair Removal for Different Skin Tones"</h4>
+        <p>Address the common concern about suitability for darker skin. Low competition keyword with high conversion intent from London's diverse population.</p>
+        <p class="impact high">Niche authority — 1,200+ words</p>
+      </div>
+      <div class="rec-item">
+        <h4>"How Much Does Laser Hair Removal Cost in London?"</h4>
+        <p>Pricing transparency content. Google loves pricing pages, and searchers with price intent are close to booking. Include comparison with waxing/shaving long-term costs.</p>
+        <p class="impact medium">Commercial intent — 1,000+ words</p>
+      </div>
+      <div class="rec-item">
+        <h4>"Soprano ICE vs IPL: Which is Better?"</h4>
+        <p>Technology comparison post. Positions London Laser as an authority on treatment technology. Targets people researching options before booking.</p>
+        <p class="impact medium">Educational — 1,000+ words</p>
+      </div>
+    </div>
+
+    <h3>Content Types That Work in This Industry</h3>
+    <ul style="margin: 12px 0 0 20px; color: var(--foxhue-muted); font-size: 0.9rem;">
+      <li style="margin-bottom: 6px;"><strong>Before &amp; after galleries</strong> — strongest conversion driver for aesthetic treatments</li>
+      <li style="margin-bottom: 6px;"><strong>FAQ pages</strong> — capture featured snippet positions in Google results</li>
+      <li style="margin-bottom: 6px;"><strong>Video testimonials</strong> — leverage existing YouTube channel, embed on service pages</li>
+      <li style="margin-bottom: 6px;"><strong>Area guides</strong> — "Laser Hair Removal in Kensington" etc. for local search</li>
+      <li style="margin-bottom: 6px;"><strong>Treatment comparison posts</strong> — "Laser vs Waxing vs Electrolysis" etc.</li>
+    </ul>
+
+    <h3>YouTube Channel Opportunity</h3>
+    <p style="font-size: 0.9rem; color: var(--foxhue-muted); margin-top: 8px;">
+      London Laser Clinic already has a YouTube channel with 43 videos and 771 subscribers — a unique asset that competitors lack. This content should be embedded on the website, linked from social media, and optimised with keyword-rich titles and descriptions. YouTube videos also appear in Google search results, creating an additional ranking opportunity.
+    </p>
+  </section>
+
+  <!-- 8. LOCAL SEO CHECKLIST -->
+  <section class="section">
+    <p><span class="section-number">7</span></p>
+    <h2>Local SEO Checklist</h2>
+    <div class="section-divider"></div>
+    <p style="font-size: 0.9rem; color: var(--foxhue-muted); margin-bottom: 20px;">
+      With 7 locations across London, local SEO represents the biggest growth opportunity. Each action below should be completed for every location.
+    </p>
+
+    <h3>Google Business Profile</h3>
+    <ul class="checklist">
+      <li><span class="check-box"></span> Verify all 7 Google Business Profiles are claimed and active</li>
+      <li><span class="check-box"></span> Add complete business information: hours, services, attributes, and description</li>
+      <li><span class="check-box"></span> Upload professional photos for each location (exterior, interior, staff, treatments)</li>
+      <li><span class="check-box"></span> Enable Google Messages and Q&amp;A on each profile</li>
+      <li><span class="check-box"></span> Respond to all Google reviews (positive and negative) within 24-48 hours</li>
+      <li><span class="check-box"></span> Post Google Business updates weekly (offers, tips, before/after photos)</li>
+    </ul>
+
+    <h3>Location Pages</h3>
+    <ul class="checklist">
+      <li><span class="check-box"></span> Create a dedicated landing page for each location (e.g. /locations/kensington)</li>
+      <li><span class="check-box"></span> Include embedded Google Map, address, phone, and opening hours on each</li>
+      <li><span class="check-box"></span> Add unique content per location (directions, nearby landmarks, parking info)</li>
+      <li><span class="check-box"></span> Implement LocalBusiness schema markup on each location page</li>
+      <li><span class="check-box"></span> Include location-specific testimonials where possible</li>
+    </ul>
+
+    <h3>Directory Listings</h3>
+    <ul class="checklist">
+      <li><span class="check-box"></span> Ensure consistent NAP (Name, Address, Phone) across all directories</li>
+      <li><span class="check-box"></span> Claim listings on: Yell, Thomson Local, Yelp, Trustpilot, Treatwell</li>
+      <li><span class="check-box"></span> Add to industry-specific directories: Glowday, WhatClinic, RealSelf</li>
+      <li><span class="check-box"></span> Set up Apple Maps listings for all locations</li>
+      <li><span class="check-box"></span> Monitor and correct any inconsistent information across directories</li>
+    </ul>
+
+    <h3>Review Generation</h3>
+    <ul class="checklist">
+      <li><span class="check-box"></span> Create a post-treatment review request process (email or SMS)</li>
+      <li><span class="check-box"></span> Add QR codes at reception linking to Google review page</li>
+      <li><span class="check-box"></span> Showcase reviews on the website (with schema markup for aggregate rating)</li>
+      <li><span class="check-box"></span> Consider Trustpilot or Reviews.io for verified review collection</li>
+    </ul>
+  </section>
+
+  <!-- 9. NEXT STEPS -->
+  <section class="section">
+    <p><span class="section-number">8</span></p>
+    <h2>Next Steps</h2>
+    <div class="section-divider"></div>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <p class="timeline-period">Week 1-2 — Quick Wins</p>
+        <ul>
+          <li>Install SSL certificate and redirect HTTP to HTTPS</li>
+          <li>Add social media links (YouTube, Instagram) to website header/footer</li>
+          <li>Add LocalBusiness schema markup to existing pages</li>
+          <li>Submit XML sitemap to Google Search Console</li>
+          <li>Fix meta titles and descriptions on all pages</li>
+        </ul>
+      </div>
+      <div class="timeline-item">
+        <p class="timeline-period">Week 3-6 — Technical Foundation</p>
+        <ul>
+          <li>Optimise images, minify assets, and improve PageSpeed score to 50+</li>
+          <li>Embed Phorest booking widget directly on service pages</li>
+          <li>Create 7 location-specific landing pages with local schema</li>
+          <li>Claim and optimise all Google Business Profiles</li>
+          <li>Embed YouTube videos on relevant service pages</li>
+        </ul>
+      </div>
+      <div class="timeline-item">
+        <p class="timeline-period">Month 2-3 — Content Launch</p>
+        <ul>
+          <li>Publish pillar blog post: "Complete Guide to Laser Hair Removal"</li>
+          <li>Publish 2 additional blog posts targeting priority keywords</li>
+          <li>Create dedicated service pages (tattoo removal, skin rejuvenation)</li>
+          <li>Build a before/after gallery page with proper alt text</li>
+          <li>Set up directory listings across all major platforms</li>
+        </ul>
+      </div>
+      <div class="timeline-item">
+        <p class="timeline-period">Month 4-6 — Growth &amp; Authority</p>
+        <ul>
+          <li>Maintain 2 blog posts per month publishing cadence</li>
+          <li>Develop area-specific content (e.g. "Laser Hair Removal in Kensington")</li>
+          <li>Build backlinks through local press, partnerships, and guest content</li>
+          <li>Implement review generation strategy across all locations</li>
+          <li>Monitor rankings and adjust keyword targeting based on performance</li>
+        </ul>
+      </div>
+      <div class="timeline-item">
+        <p class="timeline-period">Ongoing — Measurement &amp; Iteration</p>
+        <ul>
+          <li>Track organic traffic growth via Google Analytics</li>
+          <li>Monitor keyword rankings for priority terms</li>
+          <li>Review and respond to all new Google reviews</li>
+          <li>Refresh and update content quarterly</li>
+          <li>Quarterly competitor review to identify new opportunities</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p class="brand">Foxhue Studio</p>
+    <p>Prepared by Foxhue Studio &nbsp;|&nbsp; Confidential</p>
+    <p style="margin-top: 8px;">hello@foxhue.com &nbsp;|&nbsp; foxhue.com</p>
+  </footer>
+
+</body>
+</html>

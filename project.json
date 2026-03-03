@@ -6,21 +6,21 @@
     "github_org": "foxhue"
   },
   "client": {
-    "name": "Client Name",
-    "short_name": "Client",
-    "tagline": "Tagline Here",
-    "slug": "client-slug",
-    "industry": "industry-type",
-    "location": "City, Region",
-    "phone": "000 000 0000",
-    "email": "hello@client.com",
-    "website": "https://client.com",
+    "name": "London Laser Clinic",
+    "short_name": "London Laser",
+    "tagline": "",
+    "slug": "london-laser-clinic",
+    "industry": "laser-clinic",
+    "location": "London (7 locations)",
+    "phone": "07503 834611",
+    "email": "",
+    "website": "http://www.londonlaser.co.uk/",
     "social": {
       "instagram": "",
       "facebook": "",
       "tiktok": "",
       "linkedin": "",
-      "google_business": ""
+      "google_business": "https://maps.google.com/?cid=3775228527920774244"
     }
   },
   "brand": {
