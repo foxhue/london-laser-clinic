@@ -97,7 +97,8 @@ london-laser-clinic/
 - `/creative-process` — Generate client-facing creative process page
 - `/social-audit` — Social media landscape analysis (disabled)
 - `/landing-page {service}` — Campaign landing page (disabled)
-
+- `/brand-palette` — Explore and generate brand color palette options
+- `/design-directions` — Generate design direction concepts for client review
 ## Architecture Notes
 - All generated files read from `project.json`
 - CSS variable prefix: `--london-laser-clinic-`
