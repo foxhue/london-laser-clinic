@@ -1,0 +1,57 @@
+{
+  "agency": {
+    "name": "Foxhue Studio",
+    "primary_email": "andrew@foxhue.com",
+    "cc_email": "ashley@foxhue.com",
+    "github_org": "foxhue"
+  },
+  "client": {
+    "name": "Client Name",
+    "short_name": "Client",
+    "tagline": "Tagline Here",
+    "slug": "client-slug",
+    "industry": "industry-type",
+    "location": "City, Region",
+    "phone": "000 000 0000",
+    "email": "hello@client.com",
+    "website": "https://client.com",
+    "social": {
+      "instagram": "",
+      "facebook": "",
+      "tiktok": "",
+      "linkedin": "",
+      "google_business": ""
+    }
+  },
+  "brand": {
+    "mood": [],
+    "colors": {
+      "primary": "#333333",
+      "accent": "#888888",
+      "accent_hover": "#666666",
+      "background": "#F5F5F5",
+      "surface": "#E0E0E0"
+    },
+    "fonts": {
+      "heading": "'Cormorant Garamond', serif",
+      "body": "'Noto Sans', sans-serif",
+      "google_fonts_url": "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Noto+Sans:wght@300;400;500;600&display=swap"
+    }
+  },
+  "designs": [
+    { "key": "a", "name": "Direction A", "mood": "Mood description for direction A", "palette": null },
+    { "key": "b", "name": "Direction B", "mood": "Mood description for direction B", "palette": null },
+    { "key": "c", "name": "Direction C", "mood": "Mood description for direction C", "palette": null }
+  ],
+  "pages": [
+    { "key": "homepage", "title": "Homepage", "slug": "index" },
+    { "key": "about", "title": "About", "slug": "about" },
+    { "key": "contact", "title": "Contact", "slug": "contact" }
+  ],
+  "deliverables": {
+    "seo_report": true,
+    "creative_process": true,
+    "social_audit": false,
+    "landing_page": false
+  }
+}
